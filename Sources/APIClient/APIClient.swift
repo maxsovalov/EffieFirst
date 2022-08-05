@@ -16,22 +16,17 @@ public final class APIClient {
     }
 
     public func start() throws {
-        guard arguments.count > 1 else {
-            throw Error.missingFileName
-        }
-
-        // The first argument is the execution path
-        let fileName = arguments[1]
-
         do {
-            try Folder.current.createFile(at: fileName)
+            let tempFolder = try Folder.home.createSubfolderIfNeeded(withName: "Temp")
+            _ = try tempFolder.createFileIfNeeded(withName: "Temp.txt", contents: "А вот и мы".data(using: .utf8))
         } catch {
+            print(error.localizedDescription)
             throw Error.failedToCreateFile
         }
     }
 
     public func getSomeFromInternet() {
-        
+
     }
 }
 
