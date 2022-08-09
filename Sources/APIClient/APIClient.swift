@@ -7,6 +7,9 @@
 
 import Foundation
 import Files
+#if canImport(FoundationNetworking)
+import FoundationNetworking
+#endif
 
 public final class APIClient {
     private let arguments: [String]
@@ -47,28 +50,6 @@ public final class APIClient {
         }
         task.resume()
     }
-
-//    public func getSomeFromInternet() {
-//        let request = URLRequest(url: URL(string: "https://google.com")!)
-//        let task = URLSession.shared.dataTask(with: request) { data, response, error in
-//            if let error = error {
-//                print("Error: \(error)")
-//            }
-//            if let httpResponse = response as? HTTPURLResponse {
-//                print("HTTP Code: \(httpResponse.statusCode)")
-//            }
-//            if let data = data {
-//                if let s = String(data: data, encoding: .utf8) {
-//                    print("Response string: \(s)")
-//                } else {
-//                    print("No String")
-//                }
-//            } else {
-//                print("No data")
-//            }
-//        }
-//        task.resume()
-//    }
 }
 
 public extension APIClient {
