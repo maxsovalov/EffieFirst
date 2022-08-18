@@ -8,19 +8,20 @@
 import Foundation
 
 protocol CommandProtocol {
-//    associatedtype TypeOfCommand
     var commandType: CommandType { get }
 }
 
 protocol VisitsCommandProtocol: CommandProtocol {
-    var visitDate: VisitDate { get }
-    var surveyHeaderIds: [String] { get }
+    var visitDate: DateParameter { get }
+    var surveyHeaderIds: String { get }
     var isHistoryTT: Bool { get }
     var userGuid: String { get }
 }
 
 protocol VisitsForPeriodCommandProtocol: CommandProtocol {
-    var beginDate: VisitDate { get }
+    var beginDate: DateParameter { get }
+//    var questHeaderId: String { get }
+//    var userGuid: String { get }
 }
 
 //extension CommandProtocol where TypeOfCommand == GetVisitsCommand {
@@ -29,8 +30,7 @@ protocol VisitsForPeriodCommandProtocol: CommandProtocol {
 //
 //    }
 //}
-//
+
 //extension CommandProtocol where TypeOfCommand == GetVisitsForPeriod {
 ////    var beginDate: Date { get }
 //}
-

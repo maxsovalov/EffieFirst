@@ -8,6 +8,7 @@
 import Foundation
 
 enum CommandType: String, CaseIterable {
+    /// Description: https://ipland.atlassian.net/wiki/spaces/EWE/pages/1991540847
     case getVisits = "getVisits"
     case getVisitsForPeriod = "getVisitsForPeriod"
     case spentTimeByEmployee = "SpentTimeByEmployee"

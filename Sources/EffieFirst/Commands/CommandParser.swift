@@ -25,7 +25,8 @@ struct CommandParser {
     }
 }
 
-enum CommandParserError: Error {
+enum CommandParserError: Error, Equatable {
     case noInputParameters
     case commandNotFound
+    case noRequiredParameter(String)
 }
